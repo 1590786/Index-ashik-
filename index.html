@@ -1,20 +1,87 @@
-
-
-<html>
+<!DOCTYPE html><html>
 <head>
 <title>New Mater Bakery</title>
-</head>
-<body>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+margin:0;
+padding:0;
+text-align:center;
+}header{
+background:#a52a2a;
+color:white;
+padding:30px;
+}
 
+.banner{
+width:100%;
+border-radius:10px;
+}
+
+.card{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:80%;
+padding:12px;
+margin:8px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+font-size:18px;
+}
+</style>
+
+</head><body><header>
 <h1>🍞 New Mater Bakery</h1>
 <p>Fresh Bakery & Grocery Items Available</p>
-
-<h2>Products</h2>
+</header><img class="banner" src="https://images.unsplash.com/photo-1509440159596-0249088772ff"><div class="card">
+<h2>📦 Our Products</h2>
 <p>🍞 Bread - ₹30</p>
 <p>🎂 Cake - ₹250</p>
 <p>🍪 Biscuits - ₹20</p>
+</div><div class="card">
+<h2>🛒 Order Form</h2><input type="text" id="name" placeholder="Your Name"><br>
 
-<p>📞 Contact: 918689863521</p>
+<select id="product">
+<option>Bread</option>
+<option>Cake</option>
+<option>Biscuits</option>
+</select><br><input type="number" id="qty" placeholder="Quantity"><br><br>
 
-</body>
+<button onclick="sendOrder()">📲 Order on WhatsApp</button>
+
+</div><div class="card">
+<h2>📞 Contact Us</h2>
+<p>📱 918689863521</p>
+</div><script>
+function sendOrder(){
+let name=document.getElementById("name").value;
+let product=document.getElementById("product").value;
+let qty=document.getElementById("qty").value;
+
+let message =
+"Name: "+name+
+"%0AProduct: "+product+
+"%0AQuantity: "+qty;
+
+window.open(
+"https://wa.me/918689863521?text="+message,
+"_blank"
+);
+}
+</script></body>
 </html>
